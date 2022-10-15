@@ -1,12 +1,9 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
-from PIL import Image
-import plost
 import plotly.graph_objects as go
 import plotly.express as px
 import numpy 
-import matplotlib.pyplot as plt
+
 # read csv
 df = pd.read_csv('Temperature_change_Data.csv')
 # Page setting
@@ -26,7 +23,7 @@ plot2 = st.container()
 c1, c2, c3 = st.columns((4,1,5))
 with c1:
     st.subheader('Comparison of Temperature Change in Different Countries')
-    st.markdown('*  Climate change is a change in the statistical distribution of weather patterns when that change lasts for an extended period of time (i.e., decades to millions of years).')
+    st.text('*  Climate change is a change in the statistical distribution of weather patterns when that change lasts for an extended period of time (i.e., decades to millions of years).')
 
 
     # year_cross_tab_1 = pd.crosstab(data['sentiments'], data['issue'][:20])
@@ -99,8 +96,8 @@ with c3:
 
 
 # Row C
-c3,c5, c4 = st.columns(3)
-with c3:
+c6,c5, c4 = st.columns([4,1,4])
+with c6:
     st.subheader('Lowest Temperature Change in Different Countries')
     st.markdown('We visualize the temperature change of different countries with slowest rate')
     country_1= []
@@ -129,7 +126,7 @@ with c4:
     st.write(fig4)
 
 # Row D
-d1,d3 , d2 = st.columns(3)
+d1,d3 , d2 = st.columns([4,1,4])
 with d1:
     data = pd.read_csv('climate_change_dataset.csv')
     st.subheader('Year wise Production of Carbon dioxide (metric Ton)')
